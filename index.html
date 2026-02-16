@@ -141,6 +141,36 @@ width:70px;height:70px;border-radius:50%;margin-bottom:10px;
 
 .footer{text-align:center;margin-top:80px;opacity:.5;font-size:14px;}
 
+/* ===== TELEGRAM FLOAT BUTTON ===== */
+.telegram-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#0088cc;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 0 20px #0088ccaa;
+z-index:999;
+animation:pulse 2s infinite;
+transition:.3s;
+}
+.telegram-float:hover{
+transform:scale(1.1);
+}
+.telegram-float img{
+width:30px;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 #0088ccaa;}
+70%{box-shadow:0 0 0 15px transparent;}
+100%{box-shadow:0 0 0 0 transparent;}
+}
+
 @media(max-width:600px){
 .hero h1{font-size:32px;}
 }
@@ -190,7 +220,7 @@ Download Sekarang
 </div>
 </div>
 
-<!-- STEP INSTALL (TETAP ADA) -->
+<!-- STEP INSTALL -->
 <div class="steps">
 <h2>Langkah Install Aplikasi</h2>
 
@@ -249,28 +279,24 @@ Klik lanjutkan dan aplikasi siap digunakan.
 <h2>Apa Kata Pengguna?</h2>
 
 <div class="testimoni-grid">
-
 <div class="card">
 <img src="https://i.pravatar.cc/100?img=11">
 <h4>Andi Pratama</h4>
 <div class="stars">★★★★★</div>
 <p>Aplikasinya cepat dan desainnya premium banget!</p>
 </div>
-
 <div class="card">
 <img src="https://i.pravatar.cc/100?img=12">
 <h4>Siti Rahma</h4>
 <div class="stars">★★★★★</div>
 <p>Sangat mudah di install dan stabil digunakan.</p>
 </div>
-
 <div class="card">
 <img src="https://i.pravatar.cc/100?img=13">
 <h4>Budi Santoso</h4>
 <div class="stars">★★★★★</div>
 <p>Rekomendasi terbaik tahun ini!</p>
 </div>
-
 </div>
 </div>
 
@@ -280,9 +306,12 @@ Klik lanjutkan dan aplikasi siap digunakan.
 
 </div>
 
-<script>
+<!-- TELEGRAM BUTTON -->
+<a href="https://t.me/Aldinugroho37" target="_blank" class="telegram-float" title="Chat Admin Telegram">
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
+</a>
 
-/* DOWNLOAD PROGRESS */
+<script>
 const btn=document.getElementById("downloadBtn");
 const progressContainer=document.getElementById("progressContainer");
 const progressBar=document.getElementById("progressBar");
@@ -297,7 +326,6 @@ if(width>=100){clearInterval(interval);}
 },120);
 });
 
-/* STEP ACCORDION */
 const steps=document.querySelectorAll(".step-card");
 steps.forEach(step=>{
 step.addEventListener("click",()=>{
@@ -305,7 +333,6 @@ steps.forEach(s=>{if(s!==step)s.classList.remove("active");});
 step.classList.toggle("active");
 });
 });
-
 </script>
 
 </body>
